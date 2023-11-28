@@ -20,15 +20,51 @@ const useCart = create(
             const existingItem = currentItems.find((item) => item.id === data.id);
 
             if (existingItem) {
-                return toast('Item already in cart.');
+                return toast('Item already in cart.', {
+                    style: {
+                        border: '3px solid white',
+                        padding: '26px',
+                        color: 'white',
+                        backgroundColor: '#d1ce08',
+                        fontWeight: 'bold',
+                    },
+                    iconTheme: {
+                        primary: 'white',
+                        secondary: '#d1ce08',
+                    },
+                });
             }
 
             set({ items: [...get().items, data] });
-            toast.success('Item added to cart.');
+            toast.success('Item added to cart.', {
+                style: {
+                    border: '3px solid white',
+                    padding: '26px',
+                    color: 'white',
+                    backgroundColor: '#04de2c',
+                    fontWeight: 'bold',
+                },
+                iconTheme: {
+                    primary: 'white',
+                    secondary: '#04de2c',
+                },
+            });
         },
         removeItem: (id: string) => {
             set({ items: [...get().items.filter((item) => item.id !== id)] });
-            toast.success('Item removed from cart.');
+            toast.success('Item removed from cart.', {
+                style: {
+                    border: '3px solid white',
+                    padding: '26px',
+                    color: 'white',
+                    backgroundColor: '#120d0e',
+                    fontWeight: 'bold',
+                },
+                iconTheme: {
+                    primary: 'white',
+                    secondary: '#120d0e',
+                },
+            });
         },
         removeAll: () => set({ items: [] }),
     }), {

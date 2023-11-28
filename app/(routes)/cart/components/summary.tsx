@@ -16,12 +16,36 @@ const Summary = () => {
 
     useEffect(() => {
         if (searchParams.get('success')) {
-            toast.success('Payment completed.');
+            toast.success('Payment completed.', {
+                style: {
+                    border: '3px solid white',
+                    padding: '26px',
+                    color: 'white',
+                    backgroundColor: '#0acf9d',
+                    fontWeight: 'bold',
+                },
+                iconTheme: {
+                    primary: 'white',
+                    secondary: '#0acf9d',
+                },
+            });
             removeAll();
         }
 
         if (searchParams.get('canceled')) {
-            toast.error('Something went wrong.');
+            toast.error('Something went wrong.', {
+                style: {
+                    border: '3px solid white',
+                    padding: '26px',
+                    color: 'white',
+                    backgroundColor: '#c9184d',
+                    fontWeight: 'bold',
+                },
+                iconTheme: {
+                    primary: 'white',
+                    secondary: '#c9184d',
+                },
+            });
         }
     }, [searchParams, removeAll]);
 
