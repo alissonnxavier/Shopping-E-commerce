@@ -9,7 +9,7 @@ const Container: React.FC<ContainerProps> = ({
         <div className="mx-auto max-w-7xl">
             {children}
         </div>
-    )
-}
+    );
+};
 
-export default Container
+export default Container;
